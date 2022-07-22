@@ -4,12 +4,16 @@ class CustomListTile extends StatelessWidget {
   final String name;
   final String subtitle;
   final String time;
-
+  final bool isCall;
+  final IconData icon;
   const CustomListTile(
       {Key? key,
         required this.name,
         required this.subtitle,
-        this.time=''})
+        this.time='',
+        this.isCall=false,
+        this.icon=Icons.call,
+      })
       : super(key: key);
 
   @override
@@ -33,7 +37,7 @@ class CustomListTile extends StatelessWidget {
             ),
           ],
         ),
-        trailing: Text(
+        trailing:isCall?Icon(icon,color: Colors.teal.shade800,) :Text(
           time,
           style: TextStyle(color: Colors.grey),
         ),
