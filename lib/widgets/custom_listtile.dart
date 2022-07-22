@@ -5,6 +5,8 @@ class CustomListTile extends StatelessWidget {
   final String subtitle;
   final String time;
   final bool isCall;
+  final bool isStatus;
+  final bool isMyStatus;
   final IconData icon;
   const CustomListTile(
       {Key? key,
@@ -12,6 +14,8 @@ class CustomListTile extends StatelessWidget {
         required this.subtitle,
         this.time='',
         this.isCall=false,
+        this.isStatus=false,
+        this.isMyStatus=false,
         this.icon=Icons.call,
       })
       : super(key: key);
@@ -21,9 +25,32 @@ class CustomListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: ListTile(
-        leading: CircleAvatar(
-          radius: 30,
-          backgroundImage: NetworkImage('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'),
+        leading: Stack(
+          children: [
+            Container(
+              height: 50,
+                width: 50,
+                decoration:isStatus?BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: Colors.teal.shade600,width: 2),
+                ):null,
+              child: CircleAvatar(
+                backgroundImage: NetworkImage('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'),
+              ),
+            ),
+            isMyStatus?Positioned(
+              bottom: -1,
+              right: -1,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.teal.shade600,
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(color: Colors.white,)
+                ),
+                child: Icon(Icons.add,size: 20,),
+              ),
+            ):SizedBox(),
+          ],
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

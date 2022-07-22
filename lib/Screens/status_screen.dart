@@ -28,23 +28,23 @@ class StatusScreen extends StatelessWidget {
         children: const [
         CustomListTile(
         name: 'My status',
-        subtitle: 'Tap to add status update',),
+        subtitle: 'Tap to add status update',isMyStatus: true),
           Text('       Recent updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
           CustomListTile(
             name: 'Bookmark',
-            subtitle: '7 minutes ago',
+            subtitle: '7 minutes ago',isStatus: true,
           ),CustomListTile(
             name: 'Basil',
-            subtitle: '12 minutes ago',
+            subtitle: '12 minutes ago',isStatus: true,
           ),CustomListTile(
             name: 'Aneesh',
-            subtitle: '13 minutes ago',
+            subtitle: '13 minutes ago',isStatus: true,
           ),CustomListTile(
             name: 'Dona',
-            subtitle: '30 minutes ago',
+            subtitle: '30 minutes ago',isStatus: true,
           ),CustomListTile(
             name: 'Ajay',
-            subtitle: '45 minutes ago',
+            subtitle: '45 minutes ago',isStatus: true,
           ),Text('       Viewed updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
           CustomListTile(
             name: 'Bookmark',
