@@ -23,6 +23,7 @@ class CustomListTile extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           radius: 30,
+          backgroundImage: NetworkImage('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +38,7 @@ class CustomListTile extends StatelessWidget {
             ),
           ],
         ),
-        trailing:isCall?Icon(icon,color: Colors.teal.shade800,) :Text(
+        trailing:isCall?Icon(icon,color: Colors.teal.shade600,) :Text(
           time,
           style: TextStyle(color: Colors.grey),
         ),

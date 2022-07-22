@@ -6,47 +6,65 @@ class StatusScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.symmetric(vertical: 10),
-      children: const [
-      CustomListTile(
-      name: 'My status',
-      subtitle: 'Tap to add status update',),
-        Text('       Recent updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
+    return Scaffold(
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton.small(
+            backgroundColor: Colors.blueGrey[200],
+            onPressed: (){},
+            child: Icon(Icons.edit),
+          ),
+          SizedBox(height: 20),
+          FloatingActionButton(
+            backgroundColor: Colors.teal.shade600,
+            onPressed: (){},
+            child: Icon(Icons.camera_alt),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        children: const [
         CustomListTile(
-          name: 'Bookmark',
-          subtitle: '7 minutes ago',
-        ),CustomListTile(
-          name: 'Basil',
-          subtitle: '12 minutes ago',
-        ),CustomListTile(
-          name: 'Aneesh',
-          subtitle: '13 minutes ago',
-        ),CustomListTile(
-          name: 'Dona',
-          subtitle: '30 minutes ago',
-        ),CustomListTile(
-          name: 'Ajay',
-          subtitle: '45 minutes ago',
-        ),Text('       Viewed updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
-        CustomListTile(
-          name: 'Bookmark',
-          subtitle: '7 minutes ago',
-        ),CustomListTile(
-          name: 'Basil',
-          subtitle: '12 minutes ago',
-        ),CustomListTile(
-          name: 'Aneesh',
-          subtitle: '13 minutes ago',
-        ),CustomListTile(
-          name: 'Dona',
-          subtitle: '30 minutes ago',
-        ),CustomListTile(
-          name: 'Ajay',
-          subtitle: '45 minutes ago',
-        ),
+        name: 'My status',
+        subtitle: 'Tap to add status update',),
+          Text('       Recent updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
+          CustomListTile(
+            name: 'Bookmark',
+            subtitle: '7 minutes ago',
+          ),CustomListTile(
+            name: 'Basil',
+            subtitle: '12 minutes ago',
+          ),CustomListTile(
+            name: 'Aneesh',
+            subtitle: '13 minutes ago',
+          ),CustomListTile(
+            name: 'Dona',
+            subtitle: '30 minutes ago',
+          ),CustomListTile(
+            name: 'Ajay',
+            subtitle: '45 minutes ago',
+          ),Text('       Viewed updates',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),),
+          CustomListTile(
+            name: 'Bookmark',
+            subtitle: '7 minutes ago',
+          ),CustomListTile(
+            name: 'Basil',
+            subtitle: '12 minutes ago',
+          ),CustomListTile(
+            name: 'Aneesh',
+            subtitle: '13 minutes ago',
+          ),CustomListTile(
+            name: 'Dona',
+            subtitle: '30 minutes ago',
+          ),CustomListTile(
+            name: 'Ajay',
+            subtitle: '45 minutes ago',
+          ),
 
-      ],
+        ],
+      ),
     );
   }
 }
