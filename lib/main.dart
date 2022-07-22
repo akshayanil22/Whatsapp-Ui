@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/chat_Screen.dart';
+import 'package:whatsapp_ui/Screens/status_screen.dart';
+import 'Screens/chat_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this,initialIndex: 1);
+    _tabController = TabController(length: 4, vsync: this,initialIndex: 2);
   }
 
   @override
@@ -63,9 +64,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 child: Text('0'),
               ),
               ChatScreen(),
-              Center(
-                child: Text('2'),
-              ),Center(
+              StatusScreen(),Center(
                 child: Text('3'),
               ),
             ],

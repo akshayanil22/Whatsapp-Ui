@@ -9,7 +9,7 @@ class CustomListTile extends StatelessWidget {
       {Key? key,
         required this.name,
         required this.subtitle,
-        required this.time})
+        this.time=''})
       : super(key: key);
 
   @override
