@@ -4,8 +4,8 @@ import '../widgets/custom_chat_card.dart';
 
 class ChatDisplayScreen extends StatelessWidget {
   final String name;
-  final String subtitle;
-  ChatDisplayScreen({Key? key,required this.name,required this.subtitle}) : super(key: key);
+  final String lastSceen;
+  ChatDisplayScreen({Key? key,required this.name,required this.lastSceen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,13 @@ class ChatDisplayScreen extends StatelessWidget {
             color: Colors.teal.shade800,
             child: Row(
               children: [
-                const Icon(
-                  Icons.arrow_back,
+                IconButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  icon: Icon(Icons.arrow_back,
                   color: Colors.white,
-                ),
+                )),
                 const CircleAvatar(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +40,7 @@ class ChatDisplayScreen extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      subtitle,
+                      lastSceen,
                       style: TextStyle(color: Colors.grey[400]),
                     ),
                   ],

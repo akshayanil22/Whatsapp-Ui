@@ -5,7 +5,7 @@ import 'package:whatsapp_ui/Screens/status_screen.dart';
 import 'Screens/chat_Screen.dart';
 
 void main() {
-  runApp(MaterialApp(home: ChatDisplayScreen(name: 'Akshay',subtitle: 'Last seen today at 11:00 AM',)));
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
