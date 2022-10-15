@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_ui/Screens/call_screen.dart';
+import 'package:whatsapp_ui/Screens/chat_display_screen.dart';
 import 'package:whatsapp_ui/Screens/status_screen.dart';
 import 'Screens/chat_Screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: ChatDisplayScreen(name: 'Akshay',subtitle: 'Last seen today at 11:00 AM',)));
 }
 
 class MyApp extends StatefulWidget {
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this,initialIndex: 2);
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
   }
 
   @override
@@ -38,12 +39,13 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 forceElevated: innerBoxIsScrolled,
                 backgroundColor: Colors.teal.shade800,
                 actions: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.more_vert))
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.more_vert))
                 ],
                 bottom: TabBar(
-                  tabs: [
-                    Container(
+                  tabs: const [
+                    SizedBox(
                       width: 100,
                       child: Tab(
                         icon: Icon(Icons.camera_alt_outlined),
@@ -60,12 +62,13 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           },
           body: TabBarView(
             controller: _tabController,
-            children: <Widget>[
+            children: const <Widget>[
               Center(
                 child: Text('0'),
               ),
               ChatScreen(),
-              StatusScreen(),CallScreen(),
+              StatusScreen(),
+              CallScreen(),
             ],
           ),
         ),

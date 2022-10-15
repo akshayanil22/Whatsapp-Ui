@@ -10,10 +10,10 @@ class CallScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal.shade600,
         onPressed: (){},
-        child: Icon(Icons.add_call),
+        child: const Icon(Icons.add_call),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         children: const [
           CustomListTile(
             name: 'Bookmark',

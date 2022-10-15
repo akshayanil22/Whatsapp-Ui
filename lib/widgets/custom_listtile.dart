@@ -34,7 +34,7 @@ class CustomListTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.teal.shade600,width: 2),
                 ):null,
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 backgroundImage: NetworkImage('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'),
               ),
             ),
@@ -47,9 +47,9 @@ class CustomListTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                   border: Border.all(color: Colors.white,)
                 ),
-                child: Icon(Icons.add,size: 20,),
+                child: const Icon(Icons.add,size: 20,),
               ),
-            ):SizedBox(),
+            ):const SizedBox(),
           ],
         ),
         title: Column(
@@ -57,17 +57,17 @@ class CustomListTile extends StatelessWidget {
           children: [
             Text(
               name,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             Text(
               subtitle,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             ),
           ],
         ),
         trailing:isCall?Icon(icon,color: Colors.teal.shade600,) :Text(
           time,
-          style: TextStyle(color: Colors.grey),
+          style: const TextStyle(color: Colors.grey),
         ),
       ),
     );

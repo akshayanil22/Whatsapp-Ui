@@ -10,10 +10,10 @@ class ChatScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal.shade600,
         onPressed: (){},
-        child: Icon(Icons.message),
+        child: const Icon(Icons.message),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         children: const [
           CustomListTile(
             name: 'Bookmark',

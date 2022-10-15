@@ -13,9 +13,9 @@ class StatusScreen extends StatelessWidget {
           FloatingActionButton.small(
             backgroundColor: Colors.blueGrey[200],
             onPressed: (){},
-            child: Icon(Icons.edit),
+            child: const Icon(Icons.edit),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           FloatingActionButton(
             backgroundColor: Colors.teal.shade600,
             onPressed: (){},
