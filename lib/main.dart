@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_ui/Screens/call_screen.dart';
-import 'package:whatsapp_ui/Screens/chat_display_screen.dart';
 import 'package:whatsapp_ui/Screens/status_screen.dart';
 import 'Screens/chat_Screen.dart';
 
@@ -40,8 +39,31 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 backgroundColor: Colors.teal.shade800,
                 actions: [
                   IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-                  IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.more_vert))
+                  // IconButton(
+                  //     onPressed: () {}, icon: const Icon(Icons.more_vert))
+                  PopupMenuButton<int>(
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry<int>>[
+                        const PopupMenuItem<int>(
+                          value: 0,
+                          child: Text('New Group'),
+                        ),const PopupMenuItem<int>(
+                          value: 1,
+                          child: Text('New broadcast'),
+                        ),const PopupMenuItem<int>(
+                          value: 2,
+                          child: Text('Linked device'),
+                        ),const PopupMenuItem<int>(
+                          value: 3,
+                          child: Text('Starred messages'),
+                        ),const PopupMenuItem<int>(
+                          value: 4,
+                          child: Text('Payments'),
+                        ),const PopupMenuItem<int>(
+                          value: 5,
+                          child: Text('Settings'),
+                        ),
+
+                      ]),
                 ],
                 bottom: TabBar(
                   tabs: const [
@@ -64,7 +86,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             controller: _tabController,
             children: const <Widget>[
               Center(
-                child: Text('0'),
+                child: Text('Open Camera'),
               ),
               ChatScreen(),
               StatusScreen(),
